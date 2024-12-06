@@ -2,6 +2,7 @@ from fastapi import FastAPI
 from fastapi.responses import StreamingResponse
 from io import BytesIO
 from img_generation import generate_image
+from mangum import Mangum
 
 app = FastAPI()
 
@@ -22,3 +23,6 @@ async def generate_image_endpoint(name: str, num: int):
 async def main():
     # 이미지 생성
     return {"message": "Hello World!"}
+
+
+handler = Mangum(app)
