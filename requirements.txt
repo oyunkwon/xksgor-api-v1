@@ -1,5 +1,4 @@
 fastapi
 uvicorn
 Pillow
-Mangum
 mangum

@@ -19,8 +19,8 @@ async def generate_image_endpoint(name: str, num: int):
     # 이미지 반환
     return StreamingResponse(img_io, media_type="image/png")
 
-@app.get("/test")
-async def main():
+@app.get("/")
+async def test():
     # 이미지 생성
     return {"message": "Hello World!"}
 
