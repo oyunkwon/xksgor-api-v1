@@ -24,5 +24,4 @@ async def test():
     # 이미지 생성
     return {"message": "Hello World!"}
 
-
 handler = Mangum(app)
