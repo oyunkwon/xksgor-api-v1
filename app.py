@@ -3,8 +3,14 @@ from fastapi.responses import StreamingResponse
 from io import BytesIO
 from img_generation import generate_image
 from mangum import Mangum
+from fastapi.middleware.cors import CORSMiddleware
 
 app = FastAPI()
+
+app.add_middleware(
+    CORSMiddleware,
+    allow_origins=['*']
+)
 
 @app.get("/generate_image/")
 async def generate_image_endpoint(name: str, num: str):
