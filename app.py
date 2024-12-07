@@ -26,7 +26,7 @@ async def generate_image_endpoint(name: str, num: str):
     # 이미지 반환
     return StreamingResponse(img_io, media_type="image/png")
 
-@app.get("/generate_image/twitter/")
+@app.get("/generate_image-twitter/")
 async def generate_image_endpoint_twitter(name: str, num: str):
     # 이미지 생성
     num = int(num)
