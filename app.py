@@ -7,8 +7,9 @@ from mangum import Mangum
 app = FastAPI()
 
 @app.get("/generate_image/")
-async def generate_image_endpoint(name: str, num: int):
+async def generate_image_endpoint(name: str, num: str):
     # 이미지 생성
+    num = int(num)
     img = generate_image(name, num)
 
     # 이미지를 메모리에서 바로 반환할 수 있도록 BytesIO로 변환
